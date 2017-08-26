@@ -10,6 +10,7 @@
 		260DAE771F497CEE004BF717 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260DAE761F497CEE004BF717 /* OpenGL.framework */; };
 		260DAE791F497D4E004BF717 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 260DAE781F497D4E004BF717 /* libGLEW.2.1.0.dylib */; };
 		260DAE7B1F497D6B004BF717 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 260DAE7A1F497D6B004BF717 /* libSDL2-2.0.0.dylib */; };
+		261EBBB51F4D4AAC009D6C66 /* array_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 261EBBB31F4D4AAC009D6C66 /* array_draw.cpp */; };
 		26BF8E2F1F48F54500B919D5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26BF8E2E1F48F54500B919D5 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,8 @@
 		260DAE761F497CEE004BF717 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		260DAE781F497D4E004BF717 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		260DAE7A1F497D6B004BF717 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../usr/local/Cellar/sdl2/2.0.5/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		261EBBB31F4D4AAC009D6C66 /* array_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = array_draw.cpp; sourceTree = "<group>"; };
+		261EBBB41F4D4AAC009D6C66 /* array_draw.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = array_draw.hpp; sourceTree = "<group>"; };
 		26BF8E2B1F48F54500B919D5 /* OpenGl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGl; sourceTree = BUILT_PRODUCTS_DIR; };
 		26BF8E2E1F48F54500B919D5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +60,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		261EBBB11F4D4A4C009D6C66 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				261EBBB31F4D4AAC009D6C66 /* array_draw.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		261EBBB21F4D4A60009D6C66 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				261EBBB41F4D4AAC009D6C66 /* array_draw.hpp */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
 		26BF8E221F48F54500B919D5 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +96,8 @@
 		26BF8E2D1F48F54500B919D5 /* OpenGl */ = {
 			isa = PBXGroup;
 			children = (
+				261EBBB21F4D4A60009D6C66 /* Header */,
+				261EBBB11F4D4A4C009D6C66 /* Source */,
 				26BF8E2E1F48F54500B919D5 /* main.cpp */,
 			);
 			path = OpenGl;
@@ -140,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26BF8E2F1F48F54500B919D5 /* main.cpp in Sources */,
+				261EBBB51F4D4AAC009D6C66 /* array_draw.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
