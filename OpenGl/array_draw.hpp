@@ -11,7 +11,7 @@
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
-
+#include <vector>
 
 class Array_Draw{
 public:
@@ -19,9 +19,9 @@ public:
     ~Array_Draw();
     SDL_Window* Init_SDL(const GLchar* title, const GLint &x_pos, const GLint &y_pos, const GLuint &width, const GLuint &height, const GLint &flag);
     GLint Create_vertex_shader();
-    GLint Create_fragment_shader();
+    GLint Create_fragment_shader(const GLchar* fragment_shader);
     GLint Create_program_shader_obj(GLint vertex_shader, GLint fragment_shader);
-    GLuint Create_buffers();
+    GLuint Create_buffers(GLfloat vertices[], size_t vertices_size);
     
     
     
@@ -42,41 +42,6 @@ private:
     "}\0s";
     
     GLint fragment_shader;
-    const GLchar* fragment_shader_source =
-    "#version 330 core\n"
-    "out vec4 color;\n"
-    "float r = 186.0/255.0, g = 45.0/255.0, b = 35.0/255.0;\n"
-    "void main(void){\n"
-    "color = vec4(r, g, b, 1.0f);\n"
-    "}\0";
-    
-    const GLfloat vertices[54] = {
-        -.1, 0.4f, 0.f,
-        0.f,  .3f, 0.f,
-        0.f, 0.f, 0.f,
-        
-        0.f, 0.f, 0.f,
-        -.1f, .4f, 0.f,
-        -.2f, .4f, 0.f,
-        
-        -.2f, .4f, 0.f,
-        0.f, 0.f, 0.f,
-        -.25f, 0.25f, 0.f,
-        
-        .1f, 0.4f, 0.f,
-        0.f,  .3f, 0.f,
-        0.f, 0.f, 0.f,
-        
-        0.f, 0.f, 0.f,
-        .1f, .4f, 0.f,
-        .2f, .4f, 0.f,
-        
-        .2f, .4f, 0.f,
-        0.f, 0.f, 0.f,
-        .25f, 0.25f, 0.f
-    };
-    
-    
     GLuint VAO, VBO;
     
 };

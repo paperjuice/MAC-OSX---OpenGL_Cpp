@@ -8,6 +8,8 @@
 
 #include "array_draw.hpp"
 #include <iostream>
+#include <stdio.h>
+
 
 
 
@@ -66,7 +68,7 @@ GLint Array_Draw::Create_vertex_shader()
 }
 
 
-GLint Array_Draw::Create_fragment_shader(){
+GLint Array_Draw::Create_fragment_shader(const GLchar* fragment_shader_source){
     fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragment_shader, 1, &fragment_shader_source, NULL);
     glCompileShader(fragment_shader);
@@ -103,14 +105,14 @@ GLint Array_Draw::Create_program_shader_obj(GLint vs, GLint fs)
     }
 }
 
-GLuint Array_Draw::Create_buffers()
+GLuint Array_Draw::Create_buffers(GLfloat vertices[], size_t vertices_size)
 {
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
     
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, vertices_size, vertices, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 *sizeof(GLfloat), (GLvoid*)0);
     
