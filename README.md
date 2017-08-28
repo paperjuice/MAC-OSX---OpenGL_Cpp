@@ -1,4 +1,4 @@
 # MAC-OSX---OpenGL_Cpp
 
 
-![Alt text](http://i.imgur.com/o1yuqSV.png "Optional title")
+![](http://i.imgur.com/ky6EZZZ.png "Array Draw")
